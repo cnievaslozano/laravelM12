@@ -20,25 +20,22 @@ class AuthController extends Controller
         $user = Socialite::driver('google')->user();
 
         if (empty($user)) {
-
             $user = Socialite::driver('github')->user();
         }
 
-        $user = User::firstOrCreate([
-            'email' => $user->getEmail(),
+        if (!empty($user)) {
+            $userRecord = User::firstOrCreate([
+                'email' => $user->getEmail(),
+            ], [
+                'name' => $user->getName(),
+                'profile_photo_path' => $user->getAvatar(),
+            ]);
 
-        ], [
-            'name' => $user->getName(),
-            'profile_photo_path' => $user->getAvatar(),
-
-        ]);
-
-
-        // llamamos al metodo auth y iniciamos sesión
-        auth()->login($user);
-
-        return redirect()->to('/dashboard');
-
+            auth()->login($userRecord);
+            return redirect()->to('/dashboard');
+        } else {
+            echo ('error ');
+        }
 
     }
 }

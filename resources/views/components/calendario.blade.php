@@ -15,10 +15,10 @@
             <div class="modal-body">
                 <form action="" id="form">
 
+
                     <div class="form-group mb-3">
                         <label for="id">ID:</label>
-                        <input type="text" class="form-control" name="id" id="id"
-                            placeholder="">
+                        <input type="text" class="form-control" name="id" id="id" placeholder="">
                     </div>
 
                     <div class="form-group mb-3">
@@ -41,8 +41,8 @@
 
                     <div class="form-group">
                         <label for="end" class="form-label">end</label>
-                        <input type="datetime-local" class="form-control" name="end" id="end"
-                            aria-describedby="helpId" placeholder="">
+                        <input type="datetime-local" class="form-control" name="end" id="end" aria-describedby="helpId"
+                            placeholder="">
                     </div>
 
                 </form>
