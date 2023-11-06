@@ -33,6 +33,8 @@ class EventoController extends Controller
         request()->validate(Evento::$rules);
         //creando 
         $evento = Evento::create(request()->all());
+
+        return redirect()->route("/dashboard")->with("success", "El evento se ha creado correctamente");
     }
 
     /**

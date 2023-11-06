@@ -27,6 +27,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
 });
 
 // SOCIALTE ROUTES
@@ -38,4 +39,5 @@ Route::get('/auth/callback', [AuthController::class, 'callback'])->name('auth.ca
 
 // CALENDARIO
 
-Route::get('/dashboard/agregar', [EventoController::class, 'store']);
+Route::post('/agregar', [EventoController::class, 'store'])->name('agregar');
+

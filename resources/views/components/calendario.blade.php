@@ -13,8 +13,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="" id="form">
+                <form action="" id="form" method="POST">
 
+                    @csrf
 
                     <div class="form-group mb-3">
                         <label for="id">ID:</label>
@@ -35,13 +36,13 @@
 
                     <div class="form-group mb-3">
                         <label for="start" class="form-label">start</label>
-                        <input type="datetime-local" class="form-control" name="start" id="start"
+                        <input type="date" class="form-control" name="start" id="start"
                             aria-describedby="helpId" placeholder="">
                     </div>
 
                     <div class="form-group">
                         <label for="end" class="form-label">end</label>
-                        <input type="datetime-local" class="form-control" name="end" id="end" aria-describedby="helpId"
+                        <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId"
                             placeholder="">
                     </div>
 

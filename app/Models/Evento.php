@@ -26,4 +26,6 @@ class Evento extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
 }

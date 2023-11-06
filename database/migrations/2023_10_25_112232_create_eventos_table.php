@@ -14,10 +14,10 @@ return new class extends Migration {
             $table->id();
 
             $table->string('title', 255);
-            $table->text('description');
+            $table->text('descripcion');
 
-            $table->dateTime("start");
-            $table->dateTime("end");
+            $table->date("start");
+            $table->date("end");
             $table->foreignId("user_id");
             $table->timestamps();
         });
