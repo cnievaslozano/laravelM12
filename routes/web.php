@@ -41,3 +41,5 @@ Route::get('/auth/callback', [AuthController::class, 'callback'])->name('auth.ca
 
 Route::post('/agregar', [EventoController::class, 'store'])->name('agregar');
 
+Route::get('/mostrar', [EventoController::class, 'show'])->name('mostrar');
+

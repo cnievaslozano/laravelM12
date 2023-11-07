@@ -2,6 +2,9 @@
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
 <!-- AXIOS -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <x-app-layout> <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
         </h2>
