@@ -40,6 +40,7 @@ Route::get('/auth/callback', [AuthController::class, 'callback'])->name('auth.ca
 // CALENDARIO
 
 Route::post('/agregar', [EventoController::class, 'store'])->name('agregar');
+Route::post('/editar/{id}', [EventoController::class, 'edit'])->name('editar');
 
 Route::get('/mostrar', [EventoController::class, 'show'])->name('mostrar');
 
