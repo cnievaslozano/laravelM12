@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreEventoRequest;
 use App\Http\Requests\UpdateEventoRequest;
 use App\Models\Evento;
+use Carbon\Carbon;
 
 class EventoController extends Controller
 {
@@ -51,6 +52,11 @@ class EventoController extends Controller
     public function edit($id)
     {
         $evento = Evento::find($id);
+
+        // $evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d');
+        // $evento->end = Carbon::createFromFormat('Y-m-d H:i:s', $evento->end)->format('Y-m-d');
+
+
         return response()->json($evento);
     }
 
