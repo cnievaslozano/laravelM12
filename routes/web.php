@@ -42,6 +42,9 @@ Route::get('/auth/callback', [AuthController::class, 'callback'])->name('auth.ca
 Route::post('/agregar', [EventoController::class, 'store'])->name('agregar');
 Route::post('/editar/{id}', [EventoController::class, 'edit'])->name('editar');
 
+Route::post('/actualizar/{evento}', [EventoController::class, 'update'])->name('update');
+
+
 Route::post('/borrar/{id}', [EventoController::class, 'destroy'])->name('destroy');
 
 Route::get('/mostrar', [EventoController::class, 'show'])->name('mostrar');
