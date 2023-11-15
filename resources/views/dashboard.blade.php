@@ -1,3 +1,10 @@
+<style>
+    .calendar-nolink * {
+        color: inherit;
+        text-decoration: none;
+    }
+</style>
+
 <!-- Calendar -->
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js"></script>
 <!-- AXIOS -->
@@ -12,7 +19,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg calendar-nolink">
                 <x-calendario />
                 <script src="{{ asset('build/assets/calendario.js')}}"> </script>
             </div>
