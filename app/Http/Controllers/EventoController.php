@@ -32,14 +32,10 @@ class EventoController extends Controller
      */
     public function store(StoreEventoRequest $request)
     {
-        // Validar la información del evento
-        $request->validate(Evento::$rules);
-
-        // Obtener el usuario autenticado
-        $user = Auth::user();
-
-        // Crear el evento asociado al usuario autenticado
-        $evento = $user->eventos->create($request->all());
+        //validando información
+        request()->validate(Evento::$rules);
+        //creando 
+        $evento = Evento::create(request()->all());
     }
 
     /**
@@ -48,9 +44,9 @@ class EventoController extends Controller
     public function show(Evento $evento)
     {
         // obtengo los eventos del usuario autenticado
-        $user = User::find(Auth::id());
-        $evento = $user->eventos();
+        $evento = Evento::all();
         return response()->json($evento);
+        
     }
 
     /**
@@ -59,15 +55,7 @@ class EventoController extends Controller
     public function edit($id)
     {
 
-        //obtengo el usuario autenticado actual
-        $user = Auth::user();
-
-        $evento = $user->eventos->find($id);
-
-        // $evento->start = Carbon::createFromFormat('Y-m-d H:i:s', $evento->start)->format('Y-m-d');
-        // $evento->end = Carbon::createFromFormat('Y-m-d H:i:s', $evento->end)->format('Y-m-d');
-
-
+        $evento = Evento::find($id);
         return response()->json($evento);
     }
 
@@ -76,22 +64,12 @@ class EventoController extends Controller
      */
     public function update(UpdateEventoRequest $request, Evento $evento)
     {
-        // Verificar si el usuario autenticado es el propietario del evento
-        $user = Auth::user();
-
-        if ($user && $user->id === $evento->user_id) {
-
-            request()->validate(Evento::$rules);
-
-            // Actualizar el evento con los datos del request
-            $evento->update($request->all());
-
-            // Devolver la respuesta JSON
-            return response()->json($evento);
-        } else {
-            // El usuario no está autenticado o no es el propietario del evento
-            return response()->json(['error' => 'Acceso no autorizado'], 403);
-        }
+        request()->validate(Evento::$rules);
+        // Actualizar el evento con los datos del request
+        $evento->update($request->all());
+        // Devolver la respuesta JSON
+        return response()->json($evento);
+        
     }
 
     /**

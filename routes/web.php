@@ -48,4 +48,3 @@ Route::post('/actualizar/{evento}', [EventoController::class, 'update'])->name('
 Route::post('/borrar/{id}', [EventoController::class, 'destroy'])->name('destroy');
 
 Route::get('/mostrar', [EventoController::class, 'show'])->name('mostrar');
-

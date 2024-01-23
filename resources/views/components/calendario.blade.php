@@ -35,13 +35,13 @@
 
 
                     <div class="form-group mb-3">
-                        <label for="start" class="form-label">start</label>
-                        <input type="date" class="form-control" name="start" id="start"
-                            aria-describedby="helpId" placeholder="">
+                        <label for="start" class="form-label">Empieza</label>
+                        <input type="date" class="form-control" name="start" id="start" aria-describedby="helpId"
+                            placeholder="">
                     </div>
 
                     <div class="form-group">
-                        <label for="end" class="form-label">end</label>
+                        <label for="end" class="form-label">Acaba</label>
                         <input type="date" class="form-control" name="end" id="end" aria-describedby="helpId"
                             placeholder="">
                     </div>
